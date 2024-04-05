@@ -6,7 +6,7 @@ export async function getLoggedInUser() : Promise<users>{
     //     credentials :  true
     // }
 
-    const response = await axios.get("http://localhost:5000/api/users")
+    const response = await axios.get("https://driving-ls-1.onrender.com/api/users")
     return response.data
 }
 
@@ -16,7 +16,7 @@ export interface LicenceInput{
 }
 
 export async function getData() : Promise<LicenceInput[]>{
-    const response = await axios.get("http://localhost:5000/api/data")
+    const response = await axios.get("https://driving-ls-1.onrender.com/api/data")
     console.log(response.data)
     return response.data
 }
@@ -36,7 +36,7 @@ export async function signUp(input : signUpInput) : Promise<users>{
 
         }
 
-        const result = await axios.post("http://localhost:5000/api/users/signUp", JSON.stringify(input), config)
+        const result = await axios.post("https://driving-ls-1.onrender.com/api/users/signUp", JSON.stringify(input), config)
 
         return  result.data
 
@@ -59,7 +59,7 @@ export async function Login(input : LoginInput) : Promise<users>{
         }
 
         const result = await axios.post(
-            "http://localhost:5000/api/users/login",
+            "https://driving-ls-1.onrender.com/api/users/login",
             JSON.stringify(input),
             config,
         )
@@ -69,7 +69,7 @@ export async function Login(input : LoginInput) : Promise<users>{
 }
 
 export async function Logout(){
-    await axios.post("http://localhost:5000/api/users/logout")
+    await axios.post("https://driving-ls-1.onrender.com/api/users/logout")
 }
 
 export async function create(doc : LicenceInput) {
@@ -84,7 +84,7 @@ export async function create(doc : LicenceInput) {
 
 
 
-    await axios.post("http://localhost:5000/api/data", formdata, {
+    await axios.post("https://driving-ls-1.onrender.com/api/data", formdata, {
         headers : {
             'Content-Type': 'multipart/form-data'
         }
