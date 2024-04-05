@@ -6,7 +6,7 @@ export async function getLoggedInUser() : Promise<users>{
     //     credentials :  true
     // }
 
-    const response = await axios.get(process.env.REACT_APP_BACKEND_URL + "/api/users")
+    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/users`)
     return response.data
 }
 
@@ -16,7 +16,7 @@ export interface LicenceInput{
 }
 
 export async function getData() : Promise<LicenceInput[]>{
-    const response = await axios.get(process.env.REACT_APP_BACKEND_URL + '/api/data')
+    const response = await axios.get( `${process.env.REACT_APP_BACKEND_URL}/api/data`)
     console.log(response.data)
     return response.data
 }
@@ -36,7 +36,7 @@ export async function signUp(input : signUpInput) : Promise<users>{
 
         }
 
-        const result = await axios.post(process.env.REACT_APP_BACKEND_URL + "/api/users/signUp", JSON.stringify(input), config)
+        const result = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/users/signUp`, JSON.stringify(input), config)
 
         return  result.data
 
@@ -59,7 +59,7 @@ export async function Login(input : LoginInput) : Promise<users>{
         }
 
         const result = await axios.post(
-            process.env.REACT_APP_BACKEND_URL + "/api/users/login",
+             `${process.env.REACT_APP_BACKEND_URL}/api/users/login`,
             JSON.stringify(input),
             config,
         )
@@ -69,7 +69,7 @@ export async function Login(input : LoginInput) : Promise<users>{
 }
 
 export async function Logout(){
-    await axios.post(process.env.REACT_APP_BACKEND_URL + "/api/users/logout")
+    await axios.post( `${process.env.REACT_APP_BACKEND_URL}/api/users/logout`)
 }
 
 export async function create(doc : LicenceInput) {
@@ -84,7 +84,7 @@ export async function create(doc : LicenceInput) {
 
 
 
-    await axios.post(process.env.REACT_APP_BACKEND_URL + "/api/data", formdata, {
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/data`, formdata, {
         headers : {
             'Content-Type': 'multipart/form-data'
         }
