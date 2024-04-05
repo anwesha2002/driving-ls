@@ -1,11 +1,11 @@
 import './App.css'
-import {Controller, useForm} from "react-hook-form";
-import {getData, LicenceInput} from "./Network/licence.ts";
-import {Button, Card, Form} from "react-bootstrap";
-import {create} from "./Network/licence.ts";
+// import {Controller, useForm} from "react-hook-form";
+// import {getData, LicenceInput} from "./Network/licence.ts";
+// import {Button, Card, Form} from "react-bootstrap";
+// import {create} from "./Network/licence.ts";
 import {useEffect, useState} from "react";
-import { Buffer } from 'buffer';
-import FormInput from "./Components/FormInput.tsx";
+// import { Buffer } from 'buffer';
+// import FormInput from "./Components/FormInput.tsx";
 import {SignUpModal} from "./Components/SignupForm.tsx";
 import {LoginModal} from "./Components/loginModal.tsx";
 import {Navbar} from "./Components/navbar.tsx";
@@ -52,19 +52,19 @@ function App() {
     //             fileReader.readAsDataURL(blob)
     //         }))
     // }
-    function convertToBase64(input )
-    {
-      return new Promise((resolve, reject)=>{
-          const fileReader = new FileReader();
-          fileReader.readAsDataURL(input);
-          fileReader.onload = () => {
-              resolve(fileReader.result)
-          }
-          fileReader.onerror = (error) =>{
-              reject(error)
-          }
-      })
-    }
+    // function convertToBase64(input )
+    // {
+    //   return new Promise((resolve, reject)=>{
+    //       const fileReader = new FileReader();
+    //       fileReader.readAsDataURL(input);
+    //       fileReader.onload = () => {
+    //           resolve(fileReader.result)
+    //       }
+    //       fileReader.onerror = (error) =>{
+    //           reject(error)
+    //       }
+    //   })
+    // }
 
 
 

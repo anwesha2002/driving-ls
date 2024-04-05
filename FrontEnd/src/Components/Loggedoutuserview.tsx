@@ -1,7 +1,7 @@
-import {Button, Navbar} from "react-bootstrap";
-import {LoginInput, signUpInput} from "../Network/licence.ts";
-import * as licenceApi from "../Network/licence.ts"
-import {users} from "../Model/users.ts";
+import {Button} from "react-bootstrap";
+// import {LoginInput, signUpInput} from "../Network/licence.ts";
+// import * as licenceApi from "../Network/licence.ts"
+// import {users} from "../Model/users.ts";
 
 interface LoggedInProps{
     onLogInClick : (  ) => void

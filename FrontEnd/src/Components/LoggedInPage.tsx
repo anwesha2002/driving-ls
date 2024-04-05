@@ -5,7 +5,7 @@ import {create, getData, LicenceInput} from "../Network/licence.ts";
 import {useState} from "react";
 
 export function LoggedInPage(){
-    const { register, handleSubmit, formState : {errors, isSubmitting} } = useForm<LicenceInput>()
+    const { register, handleSubmit, formState : {errors} } = useForm<LicenceInput>()
 
     const [image, setImage] = useState<string>("")
 
@@ -14,8 +14,8 @@ export function LoggedInPage(){
         try {
             await create(input)
             const img = await getData()
-            //img.map(image=>setImage(image.photograph))
-            const image = new Image();
+            img.map(image=>setImage(image.photograph))
+            //const image = new Image();
 
 
             console.log(img)
