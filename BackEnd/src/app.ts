@@ -14,14 +14,14 @@ app.use(express.urlencoded({extended : false}))
 
 app.use(cors());
 app.use(express.json())
-
+app.set("trust proxy", 1);
 app.use(session(({
     secret : env.SESSION_SECRET,
     resave: false,
     saveUninitialized : false,
     cookie:{
         maxAge : 60* 60 *1000,
-        secure: false
+        sameSite: "none"
     },
     rolling : true,
     store : MongoStore.create({
