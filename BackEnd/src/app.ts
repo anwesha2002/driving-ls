@@ -8,6 +8,8 @@ import env from "./util/validateEnv";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import {RequestAuth} from "./Middleware/auth";
+import {uuid} from "uuidv4";
+import {v4 as uuidv4} from "uuid";
 
 const app = express();
 app.use(express.urlencoded({extended : false}))
@@ -21,12 +23,14 @@ app.use(session(({
     saveUninitialized : false,
     cookie:{
         maxAge : 60* 60 *1000,
-        sameSite: "none"
     },
     rolling : true,
     store : MongoStore.create({
         mongoUrl : env.MONGODB_CONNECTION_STRING
-    })
+    }),
+    genid(req): string {
+        return uuidv4()
+    }
 })))
 //app.use("/images", express.static("images"))
 
